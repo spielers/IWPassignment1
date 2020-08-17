@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body onload="load()" onunload="unload()">
+
+<h1>Hello Dude !!</h1>
+
+<h1>Welcome to Carmania</h1>
+Enter your name: <input type="text" onfocus="onfocus(this)">
+
+<p>Close this window or press F5 to reload the page.</p>
+Enter your Lastname: <input type="text" id="fname" onblur="onblur()">
+
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case. The above function is onblur</p>
+
+<p><strong>Note:</strong> Due to different browser settings, this event may not always work as expected.</p>
+<p> Select Your Car </p>
+
+<select id="mySelect" onchange="onchange()">
+  <option value="Audi">Audi</option>
+  <option value="BMW">BMW</option>
+  <option value="Mercedes">Mercedes</option>
+  <option value="Volvo">Volvo</option>
+</select>
+<p>as</p>
+<form action="/action_page.php" onsubmit="onsubmit()">
+  Enter as: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
+
+<p>The function bigImg() is triggered when the user moves the mouse pointer over the image.</p>
+<p>The function normalImg() is triggered when the mouse pointer is moved out of the image.</p>
+
+<script>
+function load() {
+  alert("Page is loaded");
+}
+function unload() {
+  alert("Thank you for visiting W3Schools!");
+}
+function onfocus(x) {
+  x.style.background = "yellow";
+}
+function onblur() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+function onchange() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+function onsubmit() {
+  alert("The form was submitted");
+}
+function bigImg(x) {
+  x.style.height = "64px";
+  x.style.width = "64px";
+}
+
+function normalImg(x) {
+  x.style.height = "32px";
+  x.style.width = "32px";
+}
+</script>
+
+</body>
+</html>
